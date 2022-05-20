@@ -97,33 +97,3 @@ public class PlayList {
         t.start();
 
     }
-
-    public void stopp() {
-        player.close();
-    }
-
-    public boolean isEmpty() {
-        return this.head == null;
-    }
-
-    public void addToEnd(String FilePath) {
-
-        Node node = new Node(FilePath);
-
-        if (!isEmpty()) {
-            this.tail.next = node;
-            node.prev = this.tail;
-            this.tail = node;
-        } else {
-            this.head = this.tail = node;
-        }
-    }
-
-    public void printList() {
-        for (Node temp = this.head; temp != null; temp = temp.next) {
-            System.out.println(temp.FilePath);
-        }
-
-    }
-
-}
